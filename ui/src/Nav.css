@@ -30,3 +30,23 @@
   object-fit: contain;
   cursor: pointer;
 }
+
+.App-header {
+  display: inline-block;
+}
+
+.first-link {
+  margin-left: 10%;
+}
+
+.links {
+  margin-left: 40px;
+  color: antiquewhite;
+  text-decoration: none !important;
+}
+
+.links a {
+  color: antiquewhite;
+  text-decoration: none !important;
+  font-weight: bold;
+}

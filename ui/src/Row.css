@@ -35,3 +35,7 @@
   transform: scale(1.08);
   opacity: 1;
 }
+
+.prop-name {
+  color: antiquewhite;
+}

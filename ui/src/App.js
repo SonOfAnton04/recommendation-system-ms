@@ -1,30 +1,22 @@
 import "./App.css";
-import requests from "./requests.js";
-import Row from "./Row.js";
-import Banner from "./Banner.js";
 import Nav from "./Nav.js";
+import DashboardItem from "./Dashboard-item.js";
+import DashboardUser from "./Dashboard-user";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Dashboard from "./Dashboard";
 
 function App() {
   return (
-    <div className="App">
-      <Nav />
-      <Banner />
-      <Row
-        title="Trending"
-        fetchURL={requests.fetchTrending}
-        isLargeRow={true}
-      />
-      {/* <Row
-          title="Netflix Originals"
-          fetchURL={requests.fetchNetflixOriginals}
-        /> */}
-      <Row title="Top Rated" fetchURL={requests.fetchTopRated} />
-      <Row title="Action" fetchURL={requests.fetchActionMovies} />
-      <Row title="Comedy" fetchURL={requests.fetchComedyMovies} />
-      <Row title="Horror" fetchURL={requests.fetchHorrorMovies} />
-      <Row title="Romance" fetchURL={requests.fetchRomanceMovies} />
-      <Row title="Documentaries" fetchURL={requests.fetchDocumentaries} />
-    </div>
+    <Router>
+      <div className="App">
+        <Nav />
+        <Routes>
+          <Route exact path="/" element={<Dashboard />}></Route>
+          <Route exact path="/" element={<DashboardItem />}></Route>
+          <Route exact path="/about" element={<DashboardUser />}></Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 

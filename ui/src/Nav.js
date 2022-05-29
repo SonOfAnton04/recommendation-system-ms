@@ -1,6 +1,7 @@
 import React from "react";
 import "./Nav.css";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 function Nav() {
   const [show, handleShow] = useState(false);
@@ -11,7 +12,7 @@ function Nav() {
       else handleShow(false);
     });
     return () => {
-      window.removeEventListener("scroll");
+      // window.removeEventListener("scroll");
     };
   }, []);
 
@@ -27,6 +28,15 @@ function Nav() {
         src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
         alt="User Logo"
       />
+
+      <span className="App-header first-link">
+        <span className="links">
+          <Link to="/">Dashboard_User</Link>
+        </span>
+        <span className="links">
+          <Link to="/about">Dashboard_Item</Link>
+        </span>
+      </span>
     </div>
   );
 }

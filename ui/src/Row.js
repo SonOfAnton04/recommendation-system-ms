@@ -23,7 +23,7 @@ function Row(props) {
 
   return (
     <div className={`row-container ${props.title}`}>
-      <h2>{props.title}</h2>
+      <h2 class="prop-name">{props.title}</h2>
 
       <div className="row__posters">
         {movies.map((movie) => (
